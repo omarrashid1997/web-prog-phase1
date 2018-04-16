@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Title goes here -->
+  <title>Fineance</title>
+  
+<!-- this 2 lines below do not modify it pls -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- make sure this import file is available to be able to run bootstrap -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+<!-- this template.css import file is for style override purpose, any style you want to make changes, pls edit it in template.css, refer it -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="template2.css">
+
+<style>
+.preference{
+color:black;
+}
+.table-text{
+			color:white;
+			font-size:20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgba(0,0, 0,0.7);
+    padding: 20px;
+    margin-top: 20px;
+	border-radius:25px;
+	color: white;
+	text-align: justify;
+	
+}
+
+.card:hover{
+	border-style: solid;
+}
+
+.card-about{
+	background-color: rgba(0,0, 0,0.7);
+    padding: 20px;
+    margin-top: 20px;
+	border-radius:25px;
+	color: white;
+	text-align: justify;
+}	
+
+.card-about:hover{
+	border-style:none;
+}
+.card-goal{
+	background-image: url(goalroute.jpg);
+	background-color: rgba(5,4,2,0.7);
+	height: 180px;
+    padding-top: 100px;
+	padding-bottom: 100px;
+	background-size: cover;
+	background-position: center;
+    text-align: center;
+	font-size: 40px;
+	border-radius:25px;
+	border-style:ridge;
+	padding: 20px;
+    margin-top: 20px;
+}
+
+.card-expenses{
+	background-image: url(calculator.jpg);
+	background-color: rgba(5,4,2,0.7);
+	height: 180px;
+    padding-top: 100px;
+	padding-bottom: 100px;
+	background-size: cover;
+	background-position: center;
+    text-align: center;
+	font-size: 40px;
+	border-radius:25px;
+	border-style:ridge;
+	padding: 20px;
+    margin-top: 20px;
+}
+
+.card-monthly{
+	background-image: url(monthly.jpg);
+	background-color: rgba(5,4,2,0.7);
+	height: 180px;
+    padding-top: 100px;
+	padding-bottom: 100px;
+	background-size: cover;
+	background-position: center;
+    text-align: center;
+	font-size: 40px;
+	border-radius:25px;
+	border-style:ridge;
+	padding: 20px;
+    margin-top: 20px;
+}
+
+.card-expenses:hover{opacity:0.8;}
+.card-goal:hover{opacity:0.8;}
+.card-monthly:hover{opacity:0.8;}
+</style>
+</head>
+
+<body>
+
+<!-- Below is navigation panel, do not edit it, i will compile it, unless you know what youre doing -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="homepage.html"><strong><i>FINE</i>ANCE</strong></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="homepage.html">HOME</a></li>
+		<li><a href="login.html">LOGIN</a></li>
+		<li><a href="register.html">REGISTER</a></li>
+        <li><a href="goals.html">SET GOALS</a></li>
+        <li><a href="expenses.html">MANAGE EXPENSES</a></li>
+        <li><a href="monthly.html">REPORTS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+
+<!-- Starts of page content (the yellow color one) -->
+<div class="header">
+	<div class="sub-header">
+	<h1>FINEANCE</h1> 
+	<p>Your personal financial management center</p>
+		<form class="form-inline" center>
+			<div class="input-group">
+				<input type="email" class="form-control" size="50" placeholder="Email address" required>
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-danger">Subscribe</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Content no 1, no need to bother since this is homepage only -->
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card-about">
+      <h2>About Company Page</h2>
+      <h4>We are from team of 5 that are aware of financial issues</h4> 
+      <h4>FINEANCE is a personal finance management web application we created to help people to 
+	  manage their money and expenses so that they can always monitor and keep track of their expenses so that they will not happened to be overspent. </h4>
+      <button class="btn btn-default btn-lg">Get in Touch</button>
+    
+		
+		  <span class="glyphicon glyphicon-signal logo"></span>
+		  <img src="statistic.png" height="160" width="160"class="logoo">
+		
+	</div>
+	
+	
+	<form action="goals.html">
+		
+			
+			<div class="card-goal">
+				
+					<input type="submit" value="Go to My Goals page" class="btn-success"></input>	
+
+			</div>  
+		
+	</form>
+    
+	<form action="expenses.html">
+			<div class="card-expenses">
+
+					<input type="submit" value="Go to My Expenses page" class="btn-info"></input>	
+				
+			</div>  
+		
+	</form>
+	
+	<form action="monthly.html">
+			<div class="card-monthly">
+
+					<input type="submit" value="Go to My Reports page" class="btn-warning"></input>	
+				
+			</div>  
+		
+	</form>
+	
+  </div>
+  
+  
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Username</h2>
+      <img src="avatar.png" height=100px, width=100px, align='center'>       User account</img>
+      <br><br>
+	  <form action="login.html" method="post">
+	  <input type="submit" class="btn-danger" href="login.html" value="Logout"></input>
+	  </form>
+	</div>
+    
+    <div class="card">
+      
+    
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong>Our mission is to help the majority of people to keep track of every expenses so that it won't be overbudget.</h4> 
+      <h4><strong>VISION:</strong>Our vision is to produce a friendly application for people to further manage and keep track of their expenses</h4>   
+	  
+	  <span class="glyphicon glyphicon-globe logo"></span>
+	  <img src="globe.png" height="200" width="200" class="logoo">
+    
+   </div>
+  </div>
+</div>
+<!-- Footer goes here -->
+<div class="footer">
+  <b>© 2018 FINANCY Inc. All rights reserved.</b>
+  <p><b>Terms, conditions, features, availability, pricing, fees, service and support options subject to change without notice.</b></p>
+	<p><b><small><i>Further enquiries email at : <a href="mailto:financy.helpdesk@gmail.com">financy.helpdesk@gmail.com.my</a></i></small></b></p>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+
+
+	
+	
+</body>
+
+
+</html>

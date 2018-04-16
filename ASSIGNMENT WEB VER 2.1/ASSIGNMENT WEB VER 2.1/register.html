@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="register.css">
+	
+    <title>Registration</title>
+  </head>
+
+  <body>
+  
+  
+    <div class="login-box">
+	  
+	  <img src="avatar.png" class="avatar">              
+      <h1>Register</h1>
+		
+      <p>Please fill in this form to create an account. <i>(Already have an account? <a href="login.html">Sign in </i></a>.)</p>
+		
+      <!--Start form-->
+	  <form action="http://webdevbasics.net/scripts/javajam8.php" method="post">
+
+        <label for="myName">Name:</label><br>
+        <input type="text" id="myName" name="myName" required="required"><br>
+        <label for="myEmail">E-mail:</label><br>
+        <input type="email" id="myEmail" name="myEmail" required="required"><br>
+        <label for="myUsername">Username: </label><br>
+        <input type="text" id="myUsername" name="myUsername" required="required"><br>
+        <!--Hover to show password requirement-->
+		<div class="tooltip">
+          <label for="myPassword">Password:</label><br>
+          <span class="tooltiptext">
+			  <h3>Password must contain the following:</h3>
+			  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+			  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+			  <p id="number" class="invalid">A <b>number</b></p>
+			  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+		  </span>
+        </div>
+        <input type="password" id="myPassword" name="myPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required"><br>
+		<!--pattern used to check if conditions are passed-->
+        <label for="myConfirmPassword">Confirm Password:</label><br>
+        <input type="password" id="myConfirmPassword" name="myConfirmPassword" required="myConfirmPassword=myPassword"><br>
+        <span id="message"></span><br>
+        <!--Check if password is equals ConfirmPassword, displays message, cannot submit if not match-->
+        <input type="submit" value="Register Now">
+		
+      </form>
+	  	
+    </div>
+	
+
+	
+	<!--Password validation-->
+	<script>
+	var myInput = document.getElementById("myPassword");
+	var letter = document.getElementById("letter");
+	var capital = document.getElementById("capital");
+	var number = document.getElementById("number");
+	var length = document.getElementById("length");
+
+
+	myInput.onkeyup = function() {
+	  // Validate lowercase letters
+	  var lowerCaseLetters = /[a-z]/g;
+	  if(myInput.value.match(lowerCaseLetters)) { 
+		letter.classList.remove("invalid");
+		letter.classList.add("valid");
+	  } else {
+		letter.classList.remove("valid");
+		letter.classList.add("invalid");
+	}
+
+	  // Validate capital letters
+	  var upperCaseLetters = /[A-Z]/g;
+	  if(myInput.value.match(upperCaseLetters)) { 
+		capital.classList.remove("invalid");
+		capital.classList.add("valid");
+	  } else {
+		capital.classList.remove("valid");
+		capital.classList.add("invalid");
+	  }
+
+	  // Validate numbers
+	  var numbers = /[0-9]/g;
+	  if(myInput.value.match(numbers)) { 
+		number.classList.remove("invalid");
+		number.classList.add("valid");
+	  } else {
+		number.classList.remove("valid");
+		number.classList.add("invalid");
+	  }
+
+	  // Validate length
+	  if(myInput.value.length >= 8) {
+		length.classList.remove("invalid");
+		length.classList.add("valid");
+	  } else {
+		length.classList.remove("valid");
+		length.classList.add("invalid");
+	  }
+	}
+	</script>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script src="register.js"></script>
+  </body>
+
+</html>

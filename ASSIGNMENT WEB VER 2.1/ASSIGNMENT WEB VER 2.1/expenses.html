@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial scale=1">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="template2.css">
+
+<style>
+
+
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgba(0,0, 0,0.7);
+    padding: 20px;
+    margin-top: 20px;
+	border-radius:25px;
+	border-style: hidden;
+	color: white;
+}
+
+.card:hover{
+	border-style: solid;
+}
+
+.card-table{
+	background-color: rgba(0,0, 0,0.9);
+    padding: 20px;
+    margin-top: 20px;
+	border-radius:25px;
+	border-style: ridge;
+	color: white;
+}
+
+
+
+</style>
+</head>
+	
+<body >
+	
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="homepage.html"><strong><i>FINE</i>ANCE</strong></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="homepage.html">HOME</a></li>
+		<li><a href="login.html">LOGIN</a></li>
+		<li><a href="register.html">REGISTER</a></li>
+        <li><a href="goals.html">SET GOALS</a></li>
+        <li><a href="expenses.html">MANAGE EXPENSES</a></li>
+        <li><a href="monthly.html">REPORTS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+<div class="header-expenses">
+		<div class="sub-header">
+			<h1>My Expenses</h1> 
+			<h2>How much have you spent?</h2>
+		</div>
+		
+</div>
+<div class="row">
+  <div class="leftcolumn">
+<div class="card-table">
+	<h2 align="center">This is the calculation of the expenses.</h2>
+
+	<form method="post" class="form-inline" align="center">
+		<div>
+			<input type="date" name="date" placeholder="date" class="form-control">
+			<select name="category" placeholder="category" class="form-control"> 
+				<option value="Groceries">Groceries</option>
+				<option value="Food">Food</option>
+				<option value="Transport">Transport</option>
+				<option value="Shopping">Shopping</option>
+				<option value="Entertainment">Entertainment</option>
+				<option value="Other">Other</option>
+			</select>
+			<input type="number" name="price" placeholder="price" class="form-control">
+			<button type="button" class="btn btn-info" id="btn-add">Add New</button>
+			<button type="button" class="btn btn-success" id="btn-update">Update</button>
+		</div>
+	</form>
+	<hr>
+
+	<table class="table" align="center">
+	   <div>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Category</th>
+				<th>Price</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody class="title">
+		
+		</tbody>
+		</div>
+	</table>
+<button type="button" class="btn btn-success" id="btn-total">Calculate Total</button>
+<p id="info"></p>
+</div>
+</div>
+
+<div class="rightcolumn">
+    <div class="card">
+      <h2>Username</h2>
+      <img src="avatar.png" height=100px, width=100px, align='center'>       User account</img>
+      <br><br>
+	  <form action="login.html" method="post">
+	  <input type="submit" class="btn-danger" href="login.html" value="Logout"></input>
+	  </form>
+	</div>
+    
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <b>© 2018 FINE ANCE Inc. All rights reserved.</b>
+  <p><b>Terms, conditions, features, availability, pricing, fees, service and support options subject to change without notice.</b></p>
+	<p><b><small><i>Further enquiries email at : <a href="mailto:financy.helpdesk@gmail.com">financy.helpdesk@gmail.com.my</a></i></small></b></p>
+
+</div>
+<script>
+    $(function(){
+	
+		var total=0;
+		var id=1;
+		var price = new Array()
+        $('#btn-add').click(function(){
+			
+            var _date = $('input[name="date"]').val();
+            var _category = $('select[name="category"]').val();
+            var _price = $('input[name="price"]').val();
+            
+            var _tr = '<tr><td>'+_date+'</td>   <td>'+_category+'</td>  <td>'+_price+'</td> <td><button type="button" class="btn btn-success btn-edit">Edit</button></td>  | <td><button type="button" class="btn btn-danger btn-delete">Delete</button></td></tr>';
+            total=total+parseFloat(_price);
+			
+			for(var i=0; i<id;i++)
+				price[i]=_price;
+            $('tbody').append(_tr);
+			id++;
+        });
+        var _trEdit = null;
+		
+    $(document).on('click','.btn-edit',function(){
+        _trEdit = $(this).closest('tr');
+        var _date = $(_trEdit).find('td:eq(0)').text();
+        var _category = $(_trEdit).find('td:eq(1)').text();
+        var _price = $(_trEdit).find('td:eq(2)').text();
+        
+        $('input[name="date"]').val(_date);
+        $('input[name="category"]').val(_category);
+        $('input[name="price"]').val(_price);
+    });
+        
+    $('#btn-update').click(function(){
+        if(_trEdit){
+            var _date = $('input[name="date"]').val();
+            var _category = $('select[name="category"]').val();
+            var _price = $('input[name="price"]').val();
+            
+            $(_trEdit).find('td:eq(0)').text(_date);
+            $(_trEdit).find('td:eq(1)').text(_category);
+            $(_trEdit).find('td:eq(2)').text(_price);
+            alert("Record has been updated!");
+            _trEdit = null;
+        }
+    });
+	
+    $(document).on('click','.btn-delete',function(){
+		var deduct=0;
+		
+		for(var i=0;i<$(this).closest('tr').length;i++)
+			deduct=price[i];
+		total=total-deduct;
+        $(this).closest('tr').remove();
+    });
+	
+	
+	$('#btn-total').click(function(){
+				
+		alert('SUM: '+total);
+		
+	});
+});
+</script>
+</body>
+</html>
+            

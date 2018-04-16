@@ -1,0 +1,75 @@
+
+a navbar-brand{
+	
+	background-image: (fineance.png);
+	height: 150px;
+	background-repeat: no-repeat;
+}
+
+.jumbotron{
+	
+	background: url(timemoney.jpg);
+	background-size: cover;
+	background-position: bottom;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	font-family: sans-serif;
+	border-radius: 40px;
+	border-color: black;
+	border-style: ridge;
+}
+
+.jumbotron:hover{
+	transition: .8s ease;
+
+	opacity: 0.8;
+}
+
+.input-group{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+#con1{
+	background-color: #cccccc;
+}
+
+.footer1{
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+}
+
+.title{
+	font-weight: 2.0;
+	background-color: rgba(5,4,2,0.8);
+	height: 180px;
+	color: white;
+}
+
+.title-table{
+	font-weight: 2.0;
+	background-color: rgba(5,4,2,0.8);
+	height: 140px;
+	color: white;
+
+}
+
+.title:hover{
+	opacity: 1.0;
+	
+}
+
+.money{
+		background-image: url(calculator.jpg);
+		background-image-opacity: 0.5;
+		background-repeat: no-repeat;
+		background-size: cover;
+		}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="template2.css">
+
+
+<style>
+.preference{
+color:black;
+}
+.table-text{
+			color:white;
+			font-size:20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgba(0,0, 0,0.7);
+    padding: 20px;
+    margin-top: 20px;
+	border-radius:25px;
+	border-style: hidden;
+	color: white;
+}
+
+.card:hover{
+	border-style: solid;
+}
+</style>
+<link rel="stylesheet" href="modal.css"> 
+</head>
+<body>
+<div class="header-goal">
+	<div class="sub-header">
+	  <h1>My Goals</h1>
+	  <p>Have you achieved your goals today?</p>
+	 </div>
+</div>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span> 
+		  </button>
+		  <a class="navbar-brand" href="homepage.html"><strong><i>FINE</i>ANCE</strong></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="homepage.html">HOME</a></li>
+			<li><a href="login.html">LOGIN</a></li>
+			<li><a href="register.html">REGISTER</a></li>
+			<li><a href="goals.html">SET GOALS</a></li>
+			<li><a href="expenses.html">MANAGE EXPENSES</a></li>
+			<li><a href="monthly.html">REPORTS</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav> 
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+	<div class="goal" style="height:200px;" align="center"></div>
+	  <button class="btn btn-info" id="myBtn" align="center">Add new goal</button>
+      <div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content"-->
+			<span class="close">&times;</span>
+	<form class="goal-popup" method="post">
+	  <div class="form-row">
+		<div class="col-md-6 mb-4">
+		  <br><label for="validationDefault01">Goal name:</label>
+		    <input type="text" name="goal" value="" class="form-control" id="validationDefault01" required>
+		  <br> <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label><br>
+		  <div class="preference">
+			  <select name="priority" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+				<option selected></option>
+				<option value="High">High</option>
+				<option value="Medium">Medium</option>
+				<option value="Low">Low</option>
+
+			  </select><br> <br>
+		  </div>
+		  
+			  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Magnitude</label><br>
+		  <div class="preference">  
+			  <select class="custom-select my-1 mr-sm-2" name="magnitude" id="inlineFormCustomSelectPref">
+				<option selected></option>
+				<option value="Easy">Easy</option>
+				<option value="Doable">Doable</option>
+				<option value="Challenging">Challenging</option>
+				<option value="Daunting">Daunting</option>
+				<option value="Audacious">Audacious</option>
+			  </select><br><br>
+		   </div>
+		   <div class="form-group">
+			<label for="exampleFormControlTextarea1" >Goal details</label>
+			<textarea class="form-control" value="" name="reason" id="exampleFormControlTextarea1" rows="3"></textarea>
+		   </div><br>
+		   
+		   <div class="form-group">
+			<label for="exampleFormControlTextarea1">Plans to accomplish this goal	</label>
+			<textarea class="form-control" value="" name="plan" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+		  <center>
+			   <br><button type="button" class="btn btn-info"  id="btn-add">Set Finance Goal</button>
+		  </center>
+		</div>
+	  </div>
+  </form>
+</div>
+
+	</div>
+	  
+      <table class="table" align="center">
+		<thead >
+			<tr>
+				<th class="table-text">ID</th>
+				<th class="table-text">Goal</th>
+				<th class="table-text">Priority</th>
+				<th class="table-text">Magnitude</th>
+				<th class="table-text">Reason</th>
+				<th class="table-text">Plan</th>				
+			</tr>
+		</thead>
+		<tbody>
+		
+		</tbody>
+	</table>    
+	</div>
+	
+	
+    <div class="card">
+      <h2>GOAL ACHIEVEMENTS</h2>
+      <table>
+      <div id="disp_goal" style="display:none" align="center"></div>
+      </table>
+	  
+      <h4>1. 	Save RM500 in March || Medium || Easy || Vacation purposes  || Cut down dinner</h4>
+	  </div>
+  </div>
+  
+  <!--Right column-->
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Username</h2>
+      <img src="avatar.png" height=100px, width=100px, align='center'>       User account</img>
+      <br><br>
+	  <form action="login.html" method="post">
+	  <input type="submit" class="btn-danger" href="login.html" value="Logout"></input>
+	  </form>
+	</div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <b>© 2018 FINANCY Inc. All rights reserved.</b>
+  <p><b>Terms, conditions, features, availability, pricing, fees, service and support options subject to change without notice.</b></p>
+	<p><b><small><i>Further enquiries email at : <a href="mailto:financy.helpdesk@gmail.com">financy.helpdesk@gmail.com.my</a></i></small></b></p>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+$(function(){
+var id=1;
+$('#btn-add').click(function(){
+			
+            
+            var _goal = $('input[name="goal"]').text('input[name="goal"]').val();
+            var _priority = $('select[name="priority"]').val();
+			var _magnitude =$('select[name="magnitude"]').val();
+			var _reason = $('textarea[name="reason"]').text('textarea[name="reason"]').val();
+			var _plan = $('textarea[name="plan"]').text('textarea[name="plan"]').val();
+            
+            var _tr = '<tr><td>'+id+'</td>  <td>'+_goal+'</td> <td>'+_priority+'</td>  <td>'+_magnitude+'</td> <td>'+_reason+'</td> <td>'+_plan+'</td> <td><input type="checkbox" id="GoalReach">Goal Reached!</button></td>  | <td><button type="button" class="btn btn-danger btn-delete">Delete</button></td></tr>';
+            id++;
+            $('tbody').append(_tr);
+			$('disp_goal').append(_tr);
+			
+			if(document.getElementById('GoalReach').checked) {
+			$("#disp_goal").show();
+			} else {
+				$("#disp_goal").hide();
+			}
+			
+        });
+		
+		$(document).on('click','.btn-delete',function(){
+		id--;
+        $(this).closest('tr').remove();
+    });
+});
+</script>
+<script>
+
+</script>
+	
+</body>
+</html>
